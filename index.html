@@ -7,7 +7,10 @@
     <script src="/_sdk/element_sdk.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
     <style>
       body {
         box-sizing: border-box;
@@ -37,8 +40,15 @@
       }
 
       @keyframes pulse {
-        0%, 100% { opacity: 1; }
-        50% { opacity: 0.8; }
+        0%,
+        100% {
+          opacity: 1;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.9;
+          transform: scale(1.02);
+        }
       }
 
       .lang-btn {
@@ -62,16 +72,24 @@
         transform: translateY(0);
       }
 
-      .reveal-delay-100 { transition-delay: 0.1s; }
-      .reveal-delay-200 { transition-delay: 0.2s; }
-      .reveal-delay-300 { transition-delay: 0.3s; }
+      .reveal-delay-100 {
+        transition-delay: 0.1s;
+      }
+      .reveal-delay-200 {
+        transition-delay: 0.2s;
+      }
+      .reveal-delay-300 {
+        transition-delay: 0.3s;
+      }
     </style>
   </head>
   <body class="h-full">
     <div id="app" class="w-full h-full overflow-auto bg-white">
       <!-- Language Toggle -->
       <div class="fixed top-6 right-6 z-50">
-        <div class="bg-white rounded-full shadow-lg p-2 flex space-x-1 border border-gray-100">
+        <div
+          class="bg-white rounded-full shadow-lg p-2 flex space-x-1 border border-gray-100 backdrop-blur-md bg-opacity-90"
+        >
           <button
             id="lang-fr"
             class="lang-btn px-4 py-2 rounded-full font-semibold transition-all active text-sm"
@@ -90,72 +108,124 @@
       </div>
 
       <!-- Header Section -->
-      <header class="gradient-bg text-white py-24 px-6 relative overflow-hidden">
+      <header
+        class="gradient-bg text-white py-24 px-6 relative overflow-hidden"
+      >
         <div class="max-w-6xl mx-auto reveal active relative z-10">
           <div class="text-center mb-12">
-            <!-- Logo SVG -->
+            <!-- Logo Icon -->
             <div class="flex justify-center mb-8">
-              <div class="bg-white bg-opacity-20 p-6 rounded-3xl backdrop-blur-sm">
-                 <i class="fa-solid fa-location-dot text-5xl text-white"></i>
+              <div
+                class="bg-white bg-opacity-20 p-6 rounded-3xl backdrop-blur-sm border border-white border-opacity-30"
+              >
+                <i class="fa-solid fa-location-dot text-5xl text-white"></i>
               </div>
             </div>
-            <h1 id="main-title" class="text-5xl font-extrabold mb-6 leading-tight tracking-tight">
+            <h1
+              id="main-title"
+              class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight tracking-tight"
+            >
               Identitix : Votre visibilité locale sur Google, enfin maîtrisée.
             </h1>
-            <p id="subtitle" class="text-xl mb-10 opacity-90 max-w-3xl mx-auto font-light">
-              Nous aidons toutes les entreprises et professionnels de votre ville à attirer plus de clients avec un pack web simple et efficace.
+            <p
+              id="subtitle"
+              class="text-xl mb-10 opacity-90 max-w-3xl mx-auto font-light leading-relaxed"
+            >
+              Nous aidons toutes les entreprises et professionnels de votre
+              ville à attirer plus de clients avec un pack web simple et
+              efficace.
             </p>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-              <button id="cta-button" class="bg-white text-purple-700 font-bold py-4 px-10 rounded-full text-lg hover:shadow-2xl transition-all shadow-xl pulse-button">
+            <a
+              href="https://calendly.com/identitix-info/15-minutes-audit"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <button
+                id="cta-button"
+                class="bg-white text-purple-700 font-bold py-5 px-12 rounded-full text-lg hover:shadow-2xl transition-all shadow-xl pulse-button"
+              >
                 Obtenez votre audit gratuit en 15 minutes
               </button>
             </a>
           </div>
         </div>
         <!-- Decorative background shapes -->
-        <div class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
-            <i class="fa-solid fa-share-nodes text-[20rem] absolute -top-20 -left-20 rotate-12"></i>
+        <div
+          class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+        >
+          <i
+            class="fa-solid fa-share-nodes text-[20rem] absolute -top-20 -left-20 rotate-12"
+          ></i>
+          <i
+            class="fa-solid fa-earth-africa text-[15rem] absolute bottom-0 -right-20 -rotate-12"
+          ></i>
         </div>
       </header>
 
       <!-- Problem Section -->
       <section class="py-24 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto reveal">
-          <h2 id="problem-title" class="text-4xl font-bold text-center mb-16 text-gray-800">
+          <h2
+            id="problem-title"
+            class="text-4xl font-bold text-center mb-16 text-gray-800"
+          >
             Votre entreprise est-elle invisible ?
           </h2>
           <div class="grid md:grid-cols-2 gap-12 items-center">
             <div class="space-y-6">
-              <div class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-100 border-l-4 border-red-500">
-                <i class="fa-solid fa-circle-xmark text-3xl text-red-500"></i>
+              <div
+                class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-100 border-l-4 border-red-500"
+              >
+                <i
+                  class="fa-solid fa-map-location-dot text-3xl text-red-500"
+                ></i>
                 <p id="problem-1" class="text-lg text-gray-700 font-medium">
                   Vos concurrents apparaissent avant vous sur Google Maps.
                 </p>
               </div>
-              <div class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-200 border-l-4 border-orange-500">
-                <i class="fa-solid fa-mobile-screen text-3xl text-orange-500"></i>
+              <div
+                class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-200 border-l-4 border-orange-500"
+              >
+                <i
+                  class="fa-solid fa-mobile-screen-button text-3xl text-orange-500"
+                ></i>
                 <p id="problem-2" class="text-lg text-gray-700 font-medium">
-                  Vos clients ne trouvent pas votre numéro ou vos services en ligne.
+                  Vos clients ne trouvent pas votre numéro ou vos services en
+                  ligne.
                 </p>
               </div>
-              <div class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-300 border-l-4 border-yellow-500">
+              <div
+                class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-300 border-l-4 border-yellow-500"
+              >
                 <i class="fa-solid fa-globe text-3xl text-yellow-500"></i>
                 <p id="problem-3" class="text-lg text-gray-700 font-medium">
-                  Pas de site web ? Une image qui ne reflète pas votre expertise.
+                  Pas de site web ? Une image qui ne reflète pas votre
+                  expertise.
                 </p>
               </div>
-              <div class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-300 border-l-4 border-red-600">
-                <i class="fa-solid fa-money-bill-trend-up text-3xl text-red-600"></i>
+              <div
+                class="flex items-center space-x-5 bg-white p-6 rounded-2xl shadow-sm reveal reveal-delay-300 border-l-4 border-red-600"
+              >
+                <i class="fa-solid fa-user-slash text-3xl text-red-600"></i>
                 <p id="problem-4" class="text-lg text-gray-700 font-medium">
-                  Vous perdez des clients chaque jour sans même vous en rendre compte.
+                  Vous perdez des clients chaque jour sans même vous en rendre
+                  compte.
                 </p>
               </div>
             </div>
             <div class="flex justify-center reveal reveal-delay-200">
-               <div class="relative">
-                  <i class="fa-solid fa-magnifying-glass-location text-[12rem] text-gray-200"></i>
-                  <i class="fa-solid fa-question absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-5xl text-red-400"></i>
-               </div>
+              <div class="relative">
+                <i
+                  class="fa-solid fa-magnifying-glass-location text-[12rem] text-gray-200"
+                ></i>
+                <div
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+                >
+                  <i
+                    class="fa-solid fa-question text-6xl text-red-400 animate-pulse"
+                  ></i>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -164,76 +234,135 @@
       <!-- Solution Section -->
       <section class="py-24 px-6 bg-white">
         <div class="max-w-6xl mx-auto reveal">
-          <h2 id="solution-title" class="text-4xl font-bold text-center mb-6 text-gray-800">
+          <h2
+            id="solution-title"
+            class="text-4xl font-bold text-center mb-6 text-gray-800"
+          >
             Identitix : Le Pack Clé en Main pour Votre Succès Local
           </h2>
-          <p id="solution-description" class="text-xl text-center text-gray-500 mb-20 max-w-3xl mx-auto">
-            Nous avons simplifié la complexité du web pour les professionnels. Avec Identitix, retrouvez une identité forte et une présence en ligne qui travaille pour vous.
+          <p
+            id="solution-description"
+            class="text-xl text-center text-gray-500 mb-20 max-w-3xl mx-auto"
+          >
+            Nous avons simplifié la complexité du web pour les professionnels.
+            Avec Identitix, retrouvez une identité forte et une présence en
+            ligne qui travaille pour vous.
           </p>
           <div class="grid md:grid-cols-3 gap-10">
             <!-- Feature 1 -->
-            <div class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-purple-500/5 card-hover reveal reveal-delay-100">
-              <div class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-purple-200">
+            <div
+              class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-purple-500/5 card-hover reveal reveal-delay-100"
+            >
+              <div
+                class="w-16 h-16 bg-purple-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-purple-200"
+              >
                 <i class="fa-solid fa-pen-nib text-2xl text-white"></i>
               </div>
-              <h3 id="feature-1-title" class="text-2xl font-bold mb-4 text-gray-800">
+              <h3
+                id="feature-1-title"
+                class="text-2xl font-bold mb-4 text-gray-800"
+              >
                 Identité Visuelle Pro
               </h3>
-              <p id="feature-1-desc" class="text-gray-600 text-lg leading-relaxed">
-                Un logo moderne et une image de marque qui vous démarque radicalement.
+              <p
+                id="feature-1-desc"
+                class="text-gray-600 text-lg leading-relaxed"
+              >
+                Un logo moderne et une image de marque qui vous démarque
+                radicalement.
               </p>
             </div>
             <!-- Feature 2 -->
-            <div class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-500/5 card-hover reveal reveal-delay-200">
-              <div class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200">
+            <div
+              class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-blue-500/5 card-hover reveal reveal-delay-200"
+            >
+              <div
+                class="w-16 h-16 bg-blue-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-blue-200"
+              >
                 <i class="fa-solid fa-laptop-code text-2xl text-white"></i>
               </div>
-              <h3 id="feature-2-title" class="text-2xl font-bold mb-4 text-gray-800">
+              <h3
+                id="feature-2-title"
+                class="text-2xl font-bold mb-4 text-gray-800"
+              >
                 Site Vitrine Simple
               </h3>
-              <p id="feature-2-desc" class="text-gray-600 text-lg leading-relaxed">
-                Votre vitrine 24/7 : une page efficace pour convertir vos visiteurs en clients.
+              <p
+                id="feature-2-desc"
+                class="text-gray-600 text-lg leading-relaxed"
+              >
+                Votre vitrine 24/7 : une page efficace pour convertir vos
+                visiteurs en clients.
               </p>
             </div>
             <!-- Feature 3 -->
-            <div class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-green-500/5 card-hover reveal reveal-delay-300">
-              <div class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-green-200">
+            <div
+              class="bg-white p-10 rounded-3xl border border-gray-100 shadow-xl shadow-green-500/5 card-hover reveal reveal-delay-300"
+            >
+              <div
+                class="w-16 h-16 bg-green-600 rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-green-200"
+              >
                 <i class="fa-solid fa-ranking-star text-2xl text-white"></i>
               </div>
-              <h3 id="feature-3-title" class="text-2xl font-bold mb-4 text-gray-800">
+              <h3
+                id="feature-3-title"
+                class="text-2xl font-bold mb-4 text-gray-800"
+              >
                 Visibilité Google
               </h3>
-              <p id="feature-3-desc" class="text-gray-600 text-lg leading-relaxed">
-                Remontez dans les résultats locaux et dominez votre secteur géographique.
+              <p
+                id="feature-3-desc"
+                class="text-gray-600 text-lg leading-relaxed"
+              >
+                Remontez dans les résultats locaux et dominez votre secteur
+                géographique.
               </p>
             </div>
           </div>
 
           <!-- Process Visual -->
-          <div class="mt-24 py-12 bg-gray-50 rounded-3xl flex flex-wrap justify-center items-center gap-8 md:gap-12 reveal reveal-delay-200">
+          <div
+            class="mt-24 py-12 bg-gray-50 rounded-3xl flex flex-wrap justify-center items-center gap-8 md:gap-12 reveal reveal-delay-200"
+          >
             <div class="text-center group">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform">
+              <div
+                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform"
+              >
                 <i class="fa-solid fa-signature text-3xl text-purple-600"></i>
               </div>
               <p class="font-bold text-gray-700">Logo</p>
             </div>
-            <i class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"></i>
+            <i
+              class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"
+            ></i>
             <div class="text-center group">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform">
+              <div
+                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform"
+              >
                 <i class="fa-solid fa-display text-3xl text-blue-600"></i>
               </div>
               <p class="font-bold text-gray-700">Site Web</p>
             </div>
-            <i class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"></i>
+            <i
+              class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"
+            ></i>
             <div class="text-center group">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform">
-                <i class="fa-solid fa-magnifying-glass text-3xl text-green-600"></i>
+              <div
+                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform"
+              >
+                <i
+                  class="fa-solid fa-magnifying-glass text-3xl text-green-600"
+                ></i>
               </div>
               <p class="font-bold text-gray-700">Google</p>
             </div>
-            <i class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"></i>
+            <i
+              class="fa-solid fa-chevron-right text-gray-300 text-2xl hidden md:block"
+            ></i>
             <div class="text-center group">
-              <div class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform">
+              <div
+                class="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4 mx-auto shadow-md group-hover:scale-110 transition-transform"
+              >
                 <i class="fa-solid fa-chart-line text-3xl text-yellow-500"></i>
               </div>
               <p class="font-bold text-gray-700">Succès</p>
@@ -245,90 +374,152 @@
       <!-- Social Proof Section -->
       <section class="py-24 px-6 bg-gray-50">
         <div class="max-w-6xl mx-auto reveal">
-          <h2 id="testimonial-title" class="text-4xl font-bold text-center mb-16 text-gray-800">
+          <h2
+            id="testimonial-title"
+            class="text-4xl font-bold text-center mb-16 text-gray-800"
+          >
             Ils nous font confiance
           </h2>
           <div class="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            <div class="bg-white p-10 rounded-3xl shadow-xl reveal reveal-delay-100 border border-gray-100">
-              <p id="testimonial-before" class="font-black text-xs uppercase tracking-widest text-red-500 mb-6 flex items-center">
+            <div
+              class="bg-white p-10 rounded-3xl shadow-xl reveal reveal-delay-100 border border-gray-100"
+            >
+              <p
+                id="testimonial-before"
+                class="font-black text-xs uppercase tracking-widest text-red-500 mb-6 flex items-center"
+              >
                 <span class="w-8 h-px bg-red-200 mr-3"></span> Avant
               </p>
-              <div class="bg-gray-100 h-40 rounded-2xl flex flex-col items-center justify-center space-y-3">
+              <div
+                class="bg-gray-100 h-40 rounded-2xl flex flex-col items-center justify-center space-y-3"
+              >
                 <i class="fa-solid fa-eye-slash text-5xl text-gray-300"></i>
-                <p id="testimonial-before-desc" class="text-gray-400 font-medium italic">
+                <p
+                  id="testimonial-before-desc"
+                  class="text-gray-400 font-medium italic"
+                >
                   Aucune présence en ligne
                 </p>
               </div>
             </div>
-            <div class="bg-white p-10 rounded-3xl shadow-xl reveal reveal-delay-200 border border-gray-100">
-              <p id="testimonial-after" class="font-black text-xs uppercase tracking-widest text-green-500 mb-6 flex items-center">
+            <div
+              class="bg-white p-10 rounded-3xl shadow-xl reveal reveal-delay-200 border border-gray-100"
+            >
+              <p
+                id="testimonial-after"
+                class="font-black text-xs uppercase tracking-widest text-green-500 mb-6 flex items-center"
+              >
                 <span class="w-8 h-px bg-green-200 mr-3"></span> Après
               </p>
-              <div class="gradient-bg h-40 rounded-2xl flex flex-col items-center justify-center space-y-3">
-                <i class="fa-solid fa-rocket text-5xl text-white opacity-80 animate-bounce"></i>
-                <p id="testimonial-after-desc" class="text-white font-bold">
+              <div
+                class="gradient-bg h-40 rounded-2xl flex flex-col items-center justify-center space-y-3 relative overflow-hidden"
+              >
+                <i
+                  class="fa-solid fa-rocket text-5xl text-white opacity-80 animate-bounce relative z-10"
+                ></i>
+                <p
+                  id="testimonial-after-desc"
+                  class="text-white font-bold relative z-10"
+                >
                   Site pro + Classement au top
                 </p>
+                <i
+                  class="fa-solid fa-star absolute -top-2 -right-2 text-white opacity-20 text-6xl"
+                ></i>
               </div>
             </div>
           </div>
           <div class="text-center mt-12 reveal reveal-delay-300">
-             <div class="inline-flex items-center space-x-2 text-gray-400 bg-white px-6 py-2 rounded-full shadow-sm border border-gray-100">
-                <i class="fa-solid fa-clock-rotate-left"></i>
-                <p id="testimonial-coming" class="text-sm font-medium">Bientôt : plus d'études de cas.</p>
-             </div>
+            <div
+              class="inline-flex items-center space-x-2 text-gray-400 bg-white px-6 py-2 rounded-full shadow-sm border border-gray-100"
+            >
+              <i class="fa-solid fa-clock-rotate-left"></i>
+              <p id="testimonial-coming" class="text-sm font-medium">
+                Bientôt : plus d'études de cas.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
       <!-- Footer CTA Section -->
-      <footer class="gradient-bg text-white py-24 px-6 relative overflow-hidden">
+      <footer
+        class="gradient-bg text-white py-24 px-6 relative overflow-hidden"
+      >
         <div class="max-w-4xl mx-auto text-center reveal relative z-10">
           <h2 id="footer-cta-title" class="text-5xl font-bold mb-8">
             Prêt à doubler votre visibilité ?
           </h2>
-          <p id="footer-cta-description" class="text-xl mb-12 opacity-90 font-light">
-            N'attendez pas que vos concurrents prennent toute la place. Discutons de votre potentiel aujourd'hui.
+          <p
+            id="footer-cta-description"
+            class="text-xl mb-12 opacity-90 font-light"
+          >
+            N'attendez pas que vos concurrents prennent toute la place.
+            Discutons de votre potentiel aujourd'hui.
           </p>
-          <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-            <button id="footer-button" class="bg-white text-purple-700 font-extrabold py-5 px-12 rounded-full text-xl hover:scale-105 transition-all shadow-2xl pulse-button mb-16">
+          <a
+            href="https://calendly.com/identitix-info/15-minutes-audit"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button
+              id="footer-button"
+              class="bg-white text-purple-700 font-extrabold py-5 px-12 rounded-full text-xl hover:scale-105 transition-all shadow-2xl pulse-button mb-16"
+            >
               Réservez votre audit GRATUIT
             </button>
           </a>
-          <div class="border-t border-white border-opacity-20 pt-10 flex flex-col items-center">
-            <div class="flex items-center space-x-3 text-lg mb-6 bg-white bg-opacity-10 px-6 py-2 rounded-full backdrop-blur-sm">
-                <i class="fa-solid fa-envelope"></i>
-                <span id="contact-email">identitix@protonmail.com</span>
+          <div
+            class="border-t border-white border-opacity-20 pt-10 flex flex-col items-center"
+          >
+            <div
+              class="flex items-center space-x-3 text-lg mb-6 bg-white bg-opacity-10 px-6 py-2 rounded-full backdrop-blur-sm hover:bg-opacity-20 transition-all cursor-default"
+            >
+              <i class="fa-solid fa-envelope"></i>
+              <span id="contact-email">identitix@protonmail.com</span>
             </div>
             <p id="footer-tagline" class="text-sm opacity-60 flex items-center">
-              <i class="fa-solid fa-copyright mr-2"></i> Identitix, Partenaire de Visibilité Locale.
+              <i class="fa-solid fa-copyright mr-2"></i> Identitix, Partenaire
+              de Visibilité Locale.
             </p>
           </div>
         </div>
         <!-- Decorative bg -->
-        <i class="fa-solid fa-bullseye text-[15rem] absolute -bottom-10 -right-10 opacity-5 rotate-45"></i>
+        <i
+          class="fa-solid fa-bullseye text-[15rem] absolute -bottom-10 -right-10 opacity-5 rotate-45"
+        ></i>
       </footer>
     </div>
 
     <script>
       const translations = {
         fr: {
-          main_title: "Identitix : Votre visibilité locale sur Google, enfin maîtrisée.",
-          subtitle: "Nous aidons toutes les entreprises et professionnels de votre ville à attirer plus de clients avec un pack web simple et efficace.",
+          main_title:
+            "Identitix : Votre visibilité locale sur Google, enfin maîtrisée.",
+          subtitle:
+            "Nous aidons toutes les entreprises et professionnels de votre ville à attirer plus de clients avec un pack web simple et efficace.",
           cta_button_text: "Obtenez votre audit gratuit en 15 minutes",
           problem_title: "Votre entreprise est-elle invisible ?",
           problem_1: "Vos concurrents apparaissent avant vous sur Google Maps.",
-          problem_2: "Vos clients ne trouvent pas votre numéro ou vos services en ligne.",
-          problem_3: "Pas de site web ? Une image qui ne reflète pas votre expertise.",
-          problem_4: "Vous perdez des clients chaque jour sans même vous en rendre compte.",
-          solution_title: "Identitix : Le Pack Clé en Main pour Votre Succès Local",
-          solution_description: "Nous avons simplifié la complexité du web pour les professionnels. Avec Identitix, retrouvez une identité forte et une présence en ligne qui travaille pour vous.",
+          problem_2:
+            "Vos clients ne trouvent pas votre numéro ou vos services en ligne.",
+          problem_3:
+            "Pas de site web ? Une image qui ne reflète pas votre expertise.",
+          problem_4:
+            "Vous perdez des clients chaque jour sans même vous en rendre compte.",
+          solution_title:
+            "Identitix : Le Pack Clé en Main pour Votre Succès Local",
+          solution_description:
+            "Nous avons simplifié la complexité du web pour les professionnels. Avec Identitix, retrouvez une identité forte et une présence en ligne qui travaille pour vous.",
           feature_1_title: "Identité Visuelle Pro",
-          feature_1_desc: "Un logo moderne et une image de marque qui vous démarque radicalement.",
+          feature_1_desc:
+            "Un logo moderne et une image de marque qui vous démarque radicalement.",
           feature_2_title: "Site Vitrine Simple",
-          feature_2_desc: "Votre vitrine 24/7 : une page efficace pour convertir vos visiteurs en clients.",
+          feature_2_desc:
+            "Votre vitrine 24/7 : une page efficace pour convertir vos visiteurs en clients.",
           feature_3_title: "Visibilité Google",
-          feature_3_desc: "Remontez dans les résultats locaux et dominez votre secteur géographique.",
+          feature_3_desc:
+            "Remontez dans les résultats locaux et dominez votre secteur géographique.",
           testimonial_title: "Ils nous font confiance",
           testimonial_before: "Avant",
           testimonial_before_desc: "Aucune présence en ligne",
@@ -336,28 +527,39 @@
           testimonial_after_desc: "Site pro + Classement au top",
           testimonial_coming: "Bientôt : plus d'études de cas.",
           footer_cta_title: "Prêt à doubler votre visibilité ?",
-          footer_cta_description: "N'attendez pas que vos concurrents prennent toute la place. Discutons de votre potentiel aujourd'hui.",
+          footer_cta_description:
+            "N'attendez pas que vos concurrents prennent toute la place. Discutons de votre potentiel aujourd'hui.",
           footer_button_text: "Réservez votre audit GRATUIT",
           contact_email: "identitix@protonmail.com",
           footer_tagline: "Identitix, Partenaire de Visibilité Locale.",
         },
         en: {
-          main_title: "Identitix: Your local visibility on Google, finally under control.",
-          subtitle: "We help all businesses and professionals in your city attract more customers with a simple and effective web package.",
+          main_title:
+            "Identitix: Your local visibility on Google, finally under control.",
+          subtitle:
+            "We help all businesses and professionals in your city attract more customers with a simple and effective web package.",
           cta_button_text: "Get your free audit in 15 minutes",
           problem_title: "Is Your Business Invisible?",
           problem_1: "Your competitors appear before you on Google Maps.",
-          problem_2: "Your customers can't find your phone number or services online.",
-          problem_3: "No website? An image that doesn't showcase your expertise.",
-          problem_4: "You're losing customers every day without even realizing it.",
-          solution_title: "Identitix: The Turnkey Package for Your Local Success",
-          solution_description: "We've simplified the complexity of the web for professionals. With Identitix, rediscover a strong identity and an online presence that works for you.",
+          problem_2:
+            "Your customers can't find your phone number or services online.",
+          problem_3:
+            "No website? An image that doesn't showcase your expertise.",
+          problem_4:
+            "You're losing customers every day without even realizing it.",
+          solution_title:
+            "Identitix: The Turnkey Package for Your Local Success",
+          solution_description:
+            "We've simplified the complexity of the web for professionals. With Identitix, rediscover a strong identity and an online presence that works for you.",
           feature_1_title: "Professional Visual Identity",
-          feature_1_desc: "A modern logo and a brand image that sets you apart radically.",
+          feature_1_desc:
+            "A modern logo and a brand image that sets you apart radically.",
           feature_2_title: "Simple Showcase Website",
-          feature_2_desc: "Your 24/7 window: an effective page to convert visitors into clients.",
+          feature_2_desc:
+            "Your 24/7 window: an effective page to convert visitors into clients.",
           feature_3_title: "Google Visibility",
-          feature_3_desc: "Rank higher in local results and dominate your geographic area.",
+          feature_3_desc:
+            "Rank higher in local results and dominate your geographic area.",
           testimonial_title: "They trust us",
           testimonial_before: "Before",
           testimonial_before_desc: "No online presence",
@@ -365,11 +567,12 @@
           testimonial_after_desc: "Pro site + Top ranking",
           testimonial_coming: "Coming soon: more case studies.",
           footer_cta_title: "Ready to double your visibility?",
-          footer_cta_description: "Don't wait for your competitors to take all the space. Let's discuss your potential today.",
+          footer_cta_description:
+            "Don't wait for your competitors to take all the space. Let's discuss your potential today.",
           footer_button_text: "Book your FREE audit",
           contact_email: "identitix@protonmail.com",
           footer_tagline: "Identitix, Your Partner for Local Visibility.",
-        }
+        },
       };
 
       let currentLanguage = "fr";
@@ -388,46 +591,70 @@
         document.getElementById("problem-2").textContent = t.problem_2;
         document.getElementById("problem-3").textContent = t.problem_3;
         document.getElementById("problem-4").textContent = t.problem_4;
-        document.getElementById("solution-title").textContent = t.solution_title;
-        document.getElementById("solution-description").textContent = t.solution_description;
-        document.getElementById("feature-1-title").textContent = t.feature_1_title;
-        document.getElementById("feature-1-desc").textContent = t.feature_1_desc;
-        document.getElementById("feature-2-title").textContent = t.feature_2_title;
-        document.getElementById("feature-2-desc").textContent = t.feature_2_desc;
-        document.getElementById("feature-3-title").textContent = t.feature_3_title;
-        document.getElementById("feature-3-desc").textContent = t.feature_3_desc;
-        document.getElementById("testimonial-title").textContent = t.testimonial_title;
-        document.getElementById("testimonial-before").textContent = t.testimonial_before;
-        document.getElementById("testimonial-before-desc").textContent = t.testimonial_before_desc;
-        document.getElementById("testimonial-after").textContent = t.testimonial_after;
-        document.getElementById("testimonial-after-desc").textContent = t.testimonial_after_desc;
-        document.getElementById("testimonial-coming").textContent = t.testimonial_coming;
-        document.getElementById("footer-cta-title").textContent = t.footer_cta_title;
-        document.getElementById("footer-cta-description").textContent = t.footer_cta_description;
-        document.getElementById("footer-button").textContent = t.footer_button_text;
+        document.getElementById("solution-title").textContent =
+          t.solution_title;
+        document.getElementById("solution-description").textContent =
+          t.solution_description;
+        document.getElementById("feature-1-title").textContent =
+          t.feature_1_title;
+        document.getElementById("feature-1-desc").textContent =
+          t.feature_1_desc;
+        document.getElementById("feature-2-title").textContent =
+          t.feature_2_title;
+        document.getElementById("feature-2-desc").textContent =
+          t.feature_2_desc;
+        document.getElementById("feature-3-title").textContent =
+          t.feature_3_title;
+        document.getElementById("feature-3-desc").textContent =
+          t.feature_3_desc;
+        document.getElementById("testimonial-title").textContent =
+          t.testimonial_title;
+        document.getElementById("testimonial-before").textContent =
+          t.testimonial_before;
+        document.getElementById("testimonial-before-desc").textContent =
+          t.testimonial_before_desc;
+        document.getElementById("testimonial-after").textContent =
+          t.testimonial_after;
+        document.getElementById("testimonial-after-desc").textContent =
+          t.testimonial_after_desc;
+        document.getElementById("testimonial-coming").textContent =
+          t.testimonial_coming;
+        document.getElementById("footer-cta-title").textContent =
+          t.footer_cta_title;
+        document.getElementById("footer-cta-description").textContent =
+          t.footer_cta_description;
+        document.getElementById("footer-button").textContent =
+          t.footer_button_text;
         document.getElementById("contact-email").textContent = t.contact_email;
-        document.getElementById("footer-tagline").innerHTML = `<i class="fa-solid fa-copyright mr-2"></i> ${t.footer_tagline}`;
+        document.getElementById(
+          "footer-tagline"
+        ).innerHTML = `<i class="fa-solid fa-copyright mr-2"></i> ${t.footer_tagline}`;
 
         // Toggle Buttons
-        document.querySelectorAll(".lang-btn").forEach((btn) => btn.classList.remove("active"));
+        document
+          .querySelectorAll(".lang-btn")
+          .forEach((btn) => btn.classList.remove("active"));
         document.getElementById(`lang-${lang}`).classList.add("active");
 
         localStorage.setItem("identitix-language", lang);
       }
 
       // Intersection Observer for Reveal
-      document.addEventListener('DOMContentLoaded', () => {
-        const revealElements = document.querySelectorAll('.reveal');
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('active');
-            }
-          });
-        }, { threshold: 0.1 });
+      document.addEventListener("DOMContentLoaded", () => {
+        const revealElements = document.querySelectorAll(".reveal");
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("active");
+              }
+            });
+          },
+          { threshold: 0.1 }
+        );
 
-        revealElements.forEach(el => observer.observe(el));
-        
+        revealElements.forEach((el) => observer.observe(el));
+
         // Load preference
         const savedLang = localStorage.getItem("identitix-language") || "fr";
         changeLanguage(savedLang);
